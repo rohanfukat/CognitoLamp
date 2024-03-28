@@ -1,7 +1,8 @@
 <?php
 
-use Illuminate\Support\Facades\Route;
 use Illuminate\Http\Request;
+use Illuminate\Support\Fascades\Http;
+use Illuminate\Support\Facades\Route;
 
 
 Route::get('/', function (Request $request) {
@@ -12,7 +13,8 @@ Route::get('/', function (Request $request) {
     ])->withOptions(['verify'=>false])->post('https://localmachine.auth.ap-south-1.amazoncognito.com/oauth2/token',[
         'grant_type' => 'authorization_code',
         'code'=>$grantCode,
-        'redirect_uri'=>'http://localhost:8000'
+        // 'redirect_uri'=>'http://localhost:8000'
+        'redirect_uri'=>'http://43.205.39.114'
     ]);
  
     $decodedResponse = json_decode($response);
