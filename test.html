@@ -1,10 +1,9 @@
-<VirtualHost *:80>
-    DocumentRoot /var/www/html/CognitoLamp/public
-    <Directory "/var/www/html/CognitoLamp/public">
-        Options FollowSymLinks MultiViews
-        Order Allow,Deny
-        Allow from all
-    </Directory>
-    ErrorLog ${APACHE_LOG_DIR}/error.log
-    CustomLog ${APACHE_LOG_DIR}/access.log combined
-</VirtualHost>
+YWlrOWo4dHZzcXRxdDY2cTBvaTdrczQ2aToxdGJjczZvYmRhY3AwcmJxaHI4bnJmczB1Y2gwbzJtM3BvazhpZHEyZHNwNnByMWU5cTRn
+
+
+curl --location --request POST 'https://localmachine.auth.ap-south-1.amazoncognito.com/oauth2/token' \
+--header 'Content-Type:application/x-www-form-urlencoded'  \
+--header 'Authorization:Basic YWlrOWo4dHZzcXRxdDY2cTBvaTdrczQ2aToxdGJjczZvYmRhY3AwcmJxaHI4bnJmczB1Y2gwbzJtM3BvazhpZHEyZHNwNnByMWU5cTRn' \
+--data-urlencode 'grant_type=authorization_code' \
+--data-urlencode 'code=2bc28473-ec5d-4020-8c26-5206ffadc071' \
+--data-urlencode 'redirect_uri=http://localhost:8000'
